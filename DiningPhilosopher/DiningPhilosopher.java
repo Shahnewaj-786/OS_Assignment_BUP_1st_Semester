@@ -13,6 +13,17 @@ public class DiningPhilosopher {
         public Philosopher(Fork left, Fork right){
             this.left = left;
             this.right = right;
+            //start();
+        }
+
+
+        public void run(){
+            //think!
+            synchronized (left){
+                synchronized (right){
+                    //eat!
+                }
+            }
         }
 
     }
