@@ -27,4 +27,24 @@ public class DiningPhilosopher {
         }
 
     }
+
+
+    static int nPhilosophers = 6;
+
+    public static void main (String[] arg) {
+        if (arg.length>0){
+            nPhilosophers = Integer.parseInt(arg[0])
+        }
+
+        //Verify.beginAtomic();
+        Fork[] forks = new Fork[nPhilosophers];
+        for (int i = 0; i<nPhilosophers; i++){
+            forks[i] = new Fork();
+        }
+        for (int i=0; i < nPhilosophers; i++){
+            Philosopher p = new Philosopher(forks[i], forks[(i+1) % nPhilosophers]);
+            p.start();
+        }
+        //verify.endAtomic();
+    }
 }
