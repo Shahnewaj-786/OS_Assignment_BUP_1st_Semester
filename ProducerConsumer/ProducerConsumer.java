@@ -65,8 +65,13 @@ class Producer implements Runnable{
     }
 
     public void run(){
+        int i = 0;
         while (true){
-            utility.set();
+            try {
+                utility.set(i++);
+            }catch (InterruptedException e){
+                e.printStackTrace();
+            }
 
         }
 
