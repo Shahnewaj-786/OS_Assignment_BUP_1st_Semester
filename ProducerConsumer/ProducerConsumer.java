@@ -41,6 +41,7 @@ class Consumer implements Runnable{
         while (true){
             try {
                 utility.get();
+                Thread.sleep(1000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -69,6 +70,7 @@ class Producer implements Runnable{
         while (true){
             try {
                 utility.set(i++);
+                Thread.sleep(1000);
             }catch (InterruptedException e){
                 e.printStackTrace();
             }
@@ -80,6 +82,9 @@ class Producer implements Runnable{
 //create a min file to run producer and consumer
 public class ProducerConsumer {
     public static void main(String[] args){
+        Utility utility = new Utility();
+        new Producer(utility);
+        new Consumer(utility);
 
     }
 }
