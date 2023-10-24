@@ -29,7 +29,7 @@ public class DiningPhilosopher {
     }
 
 
-    static int nPhilosophers = 6;
+    static int nPhilosophers = 5;
 
     public static void main (String[] arg) {
         if (arg.length>0){
